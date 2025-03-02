@@ -14,16 +14,6 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 function ProductInfo() {
 
-    {/**
-         title: productTemp.data().title,
-                price: productTemp.data().price,
-                image: productTemp.data().image,
-                description: productTemp.data().description,
-                category: productTemp.data().category,
-                stock: productTemp.data().stock,
-                rating: productTemp.data().rating,
-                reviews: productTemp.data().reviews,
-        */}
     const context = useContext(myContext);
     const { loading, setLoading, mode } = context;
 
@@ -101,7 +91,9 @@ function ProductInfo() {
                             {products &&
                                 <div className="lg:w-4/5 mx-auto flex flex-wrap">
 
-                                    <div style={{ textAlign: "center", position: "relative", }}>
+                                    <div
+                                        className='w-full flex justify-center items-center md:w-1/2'
+                                        style={{ textAlign: "center", position: "relative", }}>
 
                                         {/* Left Arrow */}
                                         <FiChevronLeft
@@ -122,7 +114,8 @@ function ProductInfo() {
                                         <img
                                             src={products.images[currentIndex]}
                                             alt={`Slide ${currentIndex}`}
-                                            style={{ width: "100%", height: "auto", borderRadius: "10px" }}
+                                            className="w-full md:w-3/4 h-auto"
+                                            style={{ borderRadius: "10px" }}
 
                                         />
                                         {/* Right Arrow */}
@@ -255,6 +248,8 @@ function ProductInfo() {
                                             <span style={{ color: mode === 'dark' ? 'white' : '', }} className="title-font font-medium text-2xl text-gray-900">
                                                 {products.price} CFA
                                             </span>
+                                            {/**
+ --------  Add to cart and Favorite BUTTONs SECTION  -----------------
                                             <button onClick={() => addCart(products)} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
                                                 Add To Cart
                                             </button>
@@ -270,6 +265,9 @@ function ProductInfo() {
                                                     <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
                                                 </svg>
                                             </button>
+
+ */}
+
                                         </div>
                                     </div>
                                 </div>}
